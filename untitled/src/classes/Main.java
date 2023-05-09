@@ -1,15 +1,42 @@
-package classes;
 
+package classes;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Serial class1 = new Serial("Stranger things",4,2017);
-
+        Scanner myScanner = new Scanner(System.in);
         Film class2 = new Film("Remove the knives",2019,"comedy");
 
         Cartoon class3 = new Cartoon("Volt",2008,"Byron Howard");
+        watchTheFilm();
+        }
 
-        System.out.println("назва серіалу: " + class1.name +";" + " кількість сезонів: " + class1.number_of_seasons +";"+ " рік випуску: " + class1.year_of_release);
-        System.out.println("назва фільму: " + class2.name +";" + " рік випуску: " + class2.year_of_release + ";" + " жанр: " + class2.genre);
-        System.out.println("назва мультфільму: " + class3.name +";" + " рік випуску: " + class3.year_of_release + ";" + " режисер: " + class3.producer);
+    public static void watchTheFilm(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Доброго дня! Вас вітає наша система бронювання квитків на кіносеанс.");
+        System.out.println("Будь ласка, виберіть тип фільму, на який ви хочете забронювати квитки (введіть 1 для фільму або 2 для мультфільму):");
+        int movieType = scanner.nextInt();
+
+        if (movieType == 1) {
+            System.out.println("Ви вибрали фільм. Будь ласка, введіть назву фільму:");
+            String movieName = scanner.next();
+
+            System.out.println("Введіть кількість квитків:");
+            int numberOfTickets = scanner.nextInt();
+
+            System.out.println("Дякуємо! Ви забронювали " + numberOfTickets + " квитків на фільм " + movieName + ".");
+
+        } else if (movieType == 2) {
+            System.out.println("Ви вибрали мультфільм. Будь ласка, введіть назву мультфільму:");
+            String cartoonName = scanner.next();
+            System.out.println("Введіть кількість квитків:");
+            int numberOfTickets = scanner.nextInt();
+            System.out.println("Дякуємо! Ви забронювали " + numberOfTickets + " квитків на мультфільм " + cartoonName);
+        } else {
+            System.out.println("Ви ввели невірний тип фільму. Будь ласка, введіть 1 для фільму або 2 для мультфільму.");
+        }
     }
 }
+
+
+
