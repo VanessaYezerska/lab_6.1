@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Scanner;
+
 public class Film {
     String name;
     String genre;
@@ -10,5 +12,18 @@ public class Film {
         this.genre = genre;
         this.year_of_release = year_of_release;
 
+    }
+    public static void ChooseTheFilm() {
+        System.out.println("Який фільм бажаєте подивитись?");
+        Scanner sc = new Scanner(System.in);
+        String watch;
+        watch = sc.nextLine();
+        System.out.println("Ви обрали фільм: " + watch +". Гарного перегляду!");
+
+
+    }
+
+    public static void main(String[] args) {
+        ChooseTheFilm();
     }
 }
